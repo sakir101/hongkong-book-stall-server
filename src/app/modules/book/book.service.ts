@@ -88,7 +88,7 @@ const getAllBooks = async (
 
     if (Object.keys(filtersData)[0] === 'maxRate') {
 
-        const topRatedBooks = await Book.find().sort({ avgRating: -1 }).limit(5);
+        const topRatedBooks = await Book.find().sort({ avgRating: -1 }).limit(10);
 
         const total = await Book.countDocuments(topRatedBooks);
         return {
